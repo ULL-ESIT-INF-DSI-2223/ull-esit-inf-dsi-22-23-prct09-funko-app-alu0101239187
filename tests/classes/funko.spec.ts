@@ -1,8 +1,8 @@
 import "mocha";
 import { expect } from "chai";
-import { Funko } from "../../src/classes/funko"
-import { FunkoTypes } from "../../src/enums/funko_types";
-import { FunkoGenres } from "../../src/enums/funko_genres";
+import { Funko } from "../../src/classes/funko.js"
+import { FunkoTypes } from "../../src/enums/funko_types.js";
+import { FunkoGenres } from "../../src/enums/funko_genres.js";
 
 describe("Funko class tests", () => {
 

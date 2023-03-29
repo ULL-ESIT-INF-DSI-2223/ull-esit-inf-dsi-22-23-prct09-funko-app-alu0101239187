@@ -1,6 +1,6 @@
-import { Stringable } from "../interfaces/stringable";
-import { FunkoTypes } from "../enums/funko_types";
-import { FunkoGenres } from "../enums/funko_genres";
+import { Stringable } from "../interfaces/stringable.js";
+import { FunkoTypes } from "../enums/funko_types.js";
+import { FunkoGenres } from "../enums/funko_genres.js";
 
 export class Funko implements Stringable {
     constructor (private _id: number, private _name: string, private _description: string, private _type: FunkoTypes, private _genre: FunkoGenres, private _franchise: string, private _number: number, private _exclusive: boolean, private _characteristics: string, private _value: number) {
