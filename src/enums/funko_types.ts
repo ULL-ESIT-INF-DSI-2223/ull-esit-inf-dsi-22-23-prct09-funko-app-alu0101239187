@@ -1,6 +1,6 @@
 export enum FunkoTypes {
-    POP = "Pop!",
-    POP_RIDES = "Pop! Rides",
-    VYNIL_SODA = "Vynil Soda",
-    VYNIL_GOLD = "Vynil Gold"
+  POP = "Pop!",
+  POP_RIDES = "Pop! Rides",
+  VYNIL_SODA = "Vynil Soda",
+  VYNIL_GOLD = "Vynil Gold",
 }
