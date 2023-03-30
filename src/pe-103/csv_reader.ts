@@ -1,6 +1,6 @@
 import { BackpackData, FileReader } from "./file_reader.js";
 
-class CSVReader extends FileReader {
+export class CSVReader extends FileReader {
   /**
    * Constructor of the class CSVReader
    * @param file_name The name of the CSV file to read
