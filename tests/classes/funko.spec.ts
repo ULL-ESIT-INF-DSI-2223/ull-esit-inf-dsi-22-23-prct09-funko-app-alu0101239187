@@ -340,4 +340,328 @@ describe("Funko class tests", () => {
       "ID: 1\nNombre: Classic Sonic\nDescripción: El mejor Funko de Sonic\nTipo: Pop!\nGénero: Videojuegos\nFranquicia: Sonic The Hedgehog\nNúmero identificativo: 1\nComún\nCaracterísticas especiales: \nValor de mercado: 50.99€\n"
     );
   });
+
+  it("Function CSVStringify", () => {
+    expect(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      ).CSVStringify()
+    ).to.be.equal(
+      "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99\n"
+    );
+  });
+
+  it("Function instanceFromCSVString", () => {
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop! Rides,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP_RIDES,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Vynil Soda,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.VYNIL_SODA,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Vynil Gold,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.VYNIL_GOLD,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(() =>
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Poppy,Videojuegos,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.throw(
+      "El tipo del Funko debe ser Pop!, Pop! Rides, Vynil Soda o Vynil Gold"
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Animación,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.ANIMATION,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Anime,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.ANIME,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Películas y TV,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.MOVIES_AND_TV,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Música,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.MUSIC,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Deportes,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.SPORTS,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      )
+    );
+    expect(() =>
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Algo,Sonic The Hedgehog,1,true,,50.99"
+      )
+    ).to.throw(
+      "El género del Funko debe ser Animación, Anime, Películas y TV, Música, Deportes o Videojuegos"
+    );
+    expect(
+      Funko.instanceFromCSVString(
+        "1,Classic Sonic,El mejor Funko de Sonic,Pop!,Videojuegos,Sonic The Hedgehog,1,false,,50.99"
+      )
+    ).to.be.eql(
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        false,
+        "",
+        50.99
+      )
+    );
+  });
 });

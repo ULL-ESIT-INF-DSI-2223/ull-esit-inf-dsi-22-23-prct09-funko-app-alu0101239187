@@ -127,7 +127,7 @@ describe("FunkoCollection class tests", () => {
     ).to.be.false;
   });
 
-  it("delete function", () => {
+  it("remove function", () => {
     const funko_collection: FunkoCollection = new FunkoCollection([
       new Funko(
         1,
@@ -146,9 +146,9 @@ describe("FunkoCollection class tests", () => {
     expect(funko_collection.show(1)).to.be.equal(
       "ID: 1\nNombre: Classic Sonic\nDescripción: El mejor Funko de Sonic\nTipo: Pop!\nGénero: Videojuegos\nFranquicia: Sonic The Hedgehog\nNúmero identificativo: 1\nExclusivo\nCaracterísticas especiales: \nValor de mercado: 50.99€\n"
     );
-    expect(funko_collection.delete(1)).to.be.true;
+    expect(funko_collection.remove(1)).to.be.true;
     expect(funko_collection.show(1)).to.be.equal("");
-    expect(funko_collection.delete(1)).to.be.false;
+    expect(funko_collection.remove(1)).to.be.false;
   });
 
   it("list function", () => {
@@ -174,5 +174,25 @@ describe("FunkoCollection class tests", () => {
     expect(funko_collection.list()).to.be.equal(
       "--------------------------------\nID: 1\nNombre: Classic Sonic\nDescripción: El mejor Funko de Sonic\nTipo: Pop!\nGénero: Videojuegos\nFranquicia: Sonic The Hedgehog\nNúmero identificativo: 1\nExclusivo\nCaracterísticas especiales: \nValor de mercado: 50.99€\n--------------------------------\n"
     );
+  });
+
+  it("iterable", () => {
+    const funko_collection: FunkoCollection = new FunkoCollection([
+      new Funko(
+        1,
+        "Classic Sonic",
+        "El mejor Funko de Sonic",
+        FunkoTypes.POP,
+        FunkoGenres.VIDEOGAMES,
+        "Sonic The Hedgehog",
+        1,
+        true,
+        "",
+        50.99
+      ),
+    ]);
+    expect(
+      [...funko_collection].filter((element) => element.id === 1).length
+    ).to.be.eql(1);
   });
 });

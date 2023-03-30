@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node dist/pe-103/csv_reader.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/funko-app.js\"",
     "doc": "typedoc",
     "test": "mocha",
-    "coverage": "nyc npm test && nyc report --reporter=lcov"
+    "coverage": "c8 --check-coverage --lines 90 --functions 90 --branches 90 --statements 90 npm test && c8 report --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,11 @@
     "@types/yargs": "^17.0.24",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "c8": "^7.13.0",
     "chai": "^4.3.7",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
     "mocha": "^10.2.0",
-    "nyc": "^15.1.0",
     "prettier": "^2.8.6",
     "ts-node": "^10.9.1",
     "tsc-watch": "^6.0.0",

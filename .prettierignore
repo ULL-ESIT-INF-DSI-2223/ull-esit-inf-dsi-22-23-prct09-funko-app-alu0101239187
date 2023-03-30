@@ -11,3 +11,5 @@ README.md
 _config.yml
 typedoc.json
 .mocharc.json
+coverage
+.github

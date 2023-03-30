@@ -3,6 +3,19 @@ import { FunkoTypes } from "../enums/funko_types.js";
 import { FunkoGenres } from "../enums/funko_genres.js";
 
 export class Funko implements Stringable {
+  /**
+   * Constructor of the class Funko
+   * @param _id ID of the Funko. Must be a positive integer
+   * @param _name Name of the Funko
+   * @param _description Description of the Funko
+   * @param _type Type of the Funko
+   * @param _genre Genre of the Funko
+   * @param _franchise Franchise of the Funko
+   * @param _number Number of the Funko. Must be a positive integer
+   * @param _exclusive Exclusiveness of the Funko
+   * @param _characteristics Special characteristics of the Funko
+   * @param _value Market value of the Funko. Must be a positive number
+   */
   constructor(
     private _id: number,
     private _name: string,
@@ -119,11 +132,90 @@ export class Funko implements Stringable {
     this._value = value;
   }
 
+  /**
+   * Returns a string representation of the Funko
+   * @returns String with the information of the Funko
+   */
   public toString(): string {
     if (this._exclusive) {
       return `ID: ${this._id}\nNombre: ${this._name}\nDescripción: ${this._description}\nTipo: ${this._type}\nGénero: ${this._genre}\nFranquicia: ${this._franchise}\nNúmero identificativo: ${this._number}\nExclusivo\nCaracterísticas especiales: ${this._characteristics}\nValor de mercado: ${this._value}€\n`;
     } else {
       return `ID: ${this._id}\nNombre: ${this._name}\nDescripción: ${this._description}\nTipo: ${this._type}\nGénero: ${this._genre}\nFranquicia: ${this._franchise}\nNúmero identificativo: ${this._number}\nComún\nCaracterísticas especiales: ${this._characteristics}\nValor de mercado: ${this._value}€\n`;
     }
+  }
+
+  /**
+   * Returns a string with the object information in CSV format
+   * @returns A string with the object information in CSV format
+   */
+  public CSVStringify(): string {
+    return `${this._id},${this._name},${this._description},${this._type},${this._genre},${this._franchise},${this._number},${this._exclusive},${this._characteristics},${this._value}\n`;
+  }
+
+  /**
+   * Creates a Funko from a string with his information in CSV format
+   * @param text String with the Funko's information in CSV format
+   * @returns A new Funko with the atributes defined
+   */
+  public static instanceFromCSVString(text: string): Funko {
+    const params: string[] = text.split(",");
+    let type: FunkoTypes = FunkoTypes.POP;
+    switch (params[3].toLowerCase()) {
+      case "pop!":
+        type = FunkoTypes.POP;
+        break;
+      case "pop! rides":
+        type = FunkoTypes.POP_RIDES;
+        break;
+      case "vynil soda":
+        type = FunkoTypes.VYNIL_SODA;
+        break;
+      case "vynil gold":
+        type = FunkoTypes.VYNIL_GOLD;
+        break;
+      default:
+        throw new Error(
+          "El tipo del Funko debe ser Pop!, Pop! Rides, Vynil Soda o Vynil Gold"
+        );
+    }
+    let genre: FunkoGenres = FunkoGenres.ANIMATION;
+    switch (params[4].toLowerCase()) {
+      case "animación":
+        genre = FunkoGenres.ANIMATION;
+        break;
+      case "anime":
+        genre = FunkoGenres.ANIME;
+        break;
+      case "películas y tv":
+        genre = FunkoGenres.MOVIES_AND_TV;
+        break;
+      case "música":
+        genre = FunkoGenres.MUSIC;
+        break;
+      case "deportes":
+        genre = FunkoGenres.SPORTS;
+        break;
+      case "videojuegos":
+        genre = FunkoGenres.VIDEOGAMES;
+        break;
+      default:
+        throw new Error(
+          "El género del Funko debe ser Animación, Anime, Películas y TV, Música, Deportes o Videojuegos"
+        );
+    }
+    const exclusive: boolean = params[7].toLowerCase() === "true";
+
+    return new Funko(
+      +params[0],
+      params[1],
+      params[2],
+      type,
+      genre,
+      params[5],
+      +params[6],
+      exclusive,
+      params[8],
+      +params[9]
+    );
   }
 }

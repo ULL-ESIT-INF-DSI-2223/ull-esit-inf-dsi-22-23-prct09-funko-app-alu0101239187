@@ -30,5 +30,3 @@ export class CSVReader extends FileReader {
     return output;
   }
 }
-
-console.log(new CSVReader("file.csv").process());
