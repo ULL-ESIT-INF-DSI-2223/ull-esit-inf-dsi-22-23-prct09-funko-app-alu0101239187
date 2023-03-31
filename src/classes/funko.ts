@@ -1,8 +1,7 @@
-import { Stringable } from "../interfaces/stringable.js";
 import { FunkoTypes } from "../enums/funko_types.js";
 import { FunkoGenres } from "../enums/funko_genres.js";
 
-export class Funko implements Stringable {
+export class Funko {
   /**
    * Constructor of the class Funko
    * @param _id ID of the Funko. Must be a positive integer
@@ -145,21 +144,12 @@ export class Funko implements Stringable {
   }
 
   /**
-   * Returns a string with the object information in CSV format
-   * @returns A string with the object information in CSV format
-   */
-  public CSVStringify(): string {
-    return `${this._id},${this._name},${this._description},${this._type},${this._genre},${this._franchise},${this._number},${this._exclusive},${this._characteristics},${this._value}\n`;
-  }
-
-  /**
-   * Creates a Funko from a string with his information in CSV format
-   * @param text String with the Funko's information in CSV format
+   * Creates a Funko from a string array with the parameters of the Funko
+   * @param text String array with the Funko's parameters
    * @returns A new Funko with the atributes defined
    */
-  public static instanceFromCSVString(text: string): Funko {
-    const params: string[] = text.split(",");
-    let type: FunkoTypes = FunkoTypes.POP;
+  public static instanceFromParams(params: string[]): Funko {
+    let type: FunkoTypes;
     switch (params[3].toLowerCase()) {
       case "pop!":
         type = FunkoTypes.POP;
@@ -178,7 +168,7 @@ export class Funko implements Stringable {
           "El tipo del Funko debe ser Pop!, Pop! Rides, Vynil Soda o Vynil Gold"
         );
     }
-    let genre: FunkoGenres = FunkoGenres.ANIMATION;
+    let genre: FunkoGenres;
     switch (params[4].toLowerCase()) {
       case "animación":
         genre = FunkoGenres.ANIMATION;

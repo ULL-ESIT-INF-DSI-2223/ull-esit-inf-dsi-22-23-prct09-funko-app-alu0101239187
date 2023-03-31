@@ -1,7 +1,13 @@
+import chalk from "chalk";
 import yargs from "yargs";
+import fs from "fs";
 import { hideBin } from "yargs/helpers";
 import { Funko } from "./classes/funko.js";
 import { add, update, remove, read, list } from "./console_commands.js";
+
+if (!fs.existsSync(`funko_collections`)) {
+  fs.mkdirSync(`funko_collections`);
+}
 
 yargs(hideBin(process.argv))
   .command(
@@ -64,52 +70,42 @@ yargs(hideBin(process.argv))
       },
     },
     (argv) => {
-      let params = "";
       if (argv.characteristics !== undefined) {
-        params =
-          argv.id +
-          "," +
-          argv.name.replace(/[\n,]/g, "") +
-          "," +
-          argv.description.replace(/[\n,]/g, "") +
-          "," +
-          argv.type.replace(/[\n,]/g, "") +
-          "," +
-          argv.genre.replace(/[\n,]/g, "") +
-          "," +
-          argv.franchise.replace(/[\n,]/g, "") +
-          "," +
-          argv.number +
-          "," +
-          argv.exclusive +
-          "," +
-          argv.characteristics.replace(/[\n,]/g, "") +
-          "," +
-          argv.value;
+        const params: string[] = [
+          "" + argv.id,
+          argv.name.replace(/[\n,]/g, ""),
+          argv.description.replace(/[\n,]/g, ""),
+          argv.type.replace(/[\n,]/g, ""),
+          argv.genre.replace(/[\n,]/g, ""),
+          argv.franchise.replace(/[\n,]/g, ""),
+          "" + argv.number,
+          "" + argv.exclusive,
+          argv.characteristics.replace(/[\n,]/g, ""),
+          "" + argv.value,
+        ];
+        try {
+          add(argv.user, Funko.instanceFromParams(params));
+        } catch (error) {
+          console.log(chalk.red(error.message));
+        }
       } else {
-        params =
-          argv.id +
-          "," +
-          argv.name.replace(/[\n,]/g, "") +
-          "," +
-          argv.description.replace(/[\n,]/g, "") +
-          "," +
-          argv.type.replace(/[\n,]/g, "") +
-          "," +
-          argv.genre.replace(/[\n,]/g, "") +
-          "," +
-          argv.franchise.replace(/[\n,]/g, "") +
-          "," +
-          argv.number +
-          "," +
-          argv.exclusive +
-          ",," +
-          argv.value;
-      }
-      try {
-        add(argv.user, Funko.instanceFromCSVString(params));
-      } catch (error) {
-        console.log(error.message);
+        const params: string[] = [
+          "" + argv.id,
+          argv.name.replace(/[\n,]/g, ""),
+          argv.description.replace(/[\n,]/g, ""),
+          argv.type.replace(/[\n,]/g, ""),
+          argv.genre.replace(/[\n,]/g, ""),
+          argv.franchise.replace(/[\n,]/g, ""),
+          "" + argv.number,
+          "" + argv.exclusive,
+          "",
+          "" + argv.value,
+        ];
+        try {
+          add(argv.user, Funko.instanceFromParams(params));
+        } catch (error) {
+          console.log(chalk.red(error.message));
+        }
       }
     }
   )
@@ -173,52 +169,42 @@ yargs(hideBin(process.argv))
       },
     },
     (argv) => {
-      let params = "";
       if (argv.characteristics !== undefined) {
-        params =
-          argv.id +
-          "," +
-          argv.name.replace(/[\n,]/g, "") +
-          "," +
-          argv.description.replace(/[\n,]/g, "") +
-          "," +
-          argv.type.replace(/[\n,]/g, "") +
-          "," +
-          argv.genre.replace(/[\n,]/g, "") +
-          "," +
-          argv.franchise.replace(/[\n,]/g, "") +
-          "," +
-          argv.number +
-          "," +
-          argv.exclusive +
-          "," +
-          argv.characteristics.replace(/[\n,]/g, "") +
-          "," +
-          argv.value;
+        const params: string[] = [
+          "" + argv.id,
+          argv.name.replace(/[\n,]/g, ""),
+          argv.description.replace(/[\n,]/g, ""),
+          argv.type.replace(/[\n,]/g, ""),
+          argv.genre.replace(/[\n,]/g, ""),
+          argv.franchise.replace(/[\n,]/g, ""),
+          "" + argv.number,
+          "" + argv.exclusive,
+          argv.characteristics.replace(/[\n,]/g, ""),
+          "" + argv.value,
+        ];
+        try {
+          update(argv.user, Funko.instanceFromParams(params));
+        } catch (error) {
+          console.log(chalk.red(error.message));
+        }
       } else {
-        params =
-          argv.id +
-          "," +
-          argv.name.replace(/[\n,]/g, "") +
-          "," +
-          argv.description.replace(/[\n,]/g, "") +
-          "," +
-          argv.type.replace(/[\n,]/g, "") +
-          "," +
-          argv.genre.replace(/[\n,]/g, "") +
-          "," +
-          argv.franchise.replace(/[\n,]/g, "") +
-          "," +
-          argv.number +
-          "," +
-          argv.exclusive +
-          ",," +
-          argv.value;
-      }
-      try {
-        update(argv.user, Funko.instanceFromCSVString(params));
-      } catch (error) {
-        console.log(error.message);
+        const params: string[] = [
+          "" + argv.id,
+          argv.name.replace(/[\n,]/g, ""),
+          argv.description.replace(/[\n,]/g, ""),
+          argv.type.replace(/[\n,]/g, ""),
+          argv.genre.replace(/[\n,]/g, ""),
+          argv.franchise.replace(/[\n,]/g, ""),
+          "" + argv.number,
+          "" + argv.exclusive,
+          "",
+          "" + argv.value,
+        ];
+        try {
+          update(argv.user, Funko.instanceFromParams(params));
+        } catch (error) {
+          console.log(chalk.red(error.message));
+        }
       }
     }
   )
