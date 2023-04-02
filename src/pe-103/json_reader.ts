@@ -1,6 +1,6 @@
 import { BackpackData, FileReader } from "./file_reader.js";
 
-class JSONReader extends FileReader {
+export class JSONReader extends FileReader {
   /**
    * Constructor of the class JSONReader
    * @param file_name The name of the JSON file to read
