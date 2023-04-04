@@ -14,6 +14,8 @@
 
 - [Introducción](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#introducción)
 - [Clase Funko](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#clase-funko)
+- [Comandos de la aplicación](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#comandos-de-la-aplicación)
+- [Ejercicio PE103](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#ejercicio-pe103)
 - [Conclusión](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#conclusión)
 - [Bibliografía](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#bibliografía)
 
@@ -74,6 +76,22 @@ La aplicación hace uso de las siguientes funciones para ejecutar los comandos d
 - `readFile`: Función utilizada por las opciones de la aplicación. Lee un fichero JSON y convierte su contenido en un objeto Funko.
 - `writeFile`: Función utilizada por las opciones de la aplicación. Recibe un objeto Funko y escribe su información en un fichero JSON.
 - `printFunko`: Función utilizada por las opciones de la aplicación. Muestra por pantalla la información de un objeto Funko.
+
+### Funcionamiento de la aplicación
+
+Para funcionar, la aplicación hace uso del paquete `yargs` para recibir los argumentos por línea de comandos y ejecuta el comando que haya solicitado el usuario mediante las funciones anteriormente mencionadas.
+
+## Ejercicio PE103
+
+Este ejercicio consistió en utilizar el patrón *Template method* para crear un lector de ficheros CSV y un lector ficheros JSON que contienen los datos del problema de la mochila. En esta ocasión, solamente se tratará el lector de ficheros CSV y la clase padre, ya que no se pudo implementar el lector de Ficheros JSON.
+
+### Clase abstracta FileReader
+
+La clase `FileReader` es la que contiene el método plantilla y los métodos *hook*. El método plantilla `process`, lee un fichero de forma síncrona y pasa su contenido al método abstracto `processText`.
+
+### Clase CSVReader
+
+La clase `CSVReader` hereda de la clase `FileReader` e implementa la función `processText` que procesa el texto, separando las líneas por comas para obtener los pesos y los beneficios de los elementos de la mochila y devolverla formateada en un tipo `BackpackData`.
 
 ## Conclusión
 
