@@ -24,15 +24,18 @@
 <a href="#alu0101239187ulledues" id="alu0101239187ulledues" style="color: inherit; text-decoration: none;">
   <h3><a href="mailto:alu0101239187@ull.edu.es">alu0101239187@ull.edu.es</a></h3>
 </a>
-<p>[<img src="" alt="tests"></p>
-<p>[<img src="" alt="coveralls"></p>
-<p>[<img src="" alt="Quality Gate Status"></p>
+<p><a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/actions/workflows/node.js.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/actions/workflows/node.js.yml/badge.svg" alt="tests"></a></p>
+<p><a href="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/actions/workflows/coveralls.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/actions/workflows/coveralls.yml/badge.svg" alt="coveralls"></a></p>
+<p><a href="https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2223_ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187"><img src="https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2223_ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187&metric=alert_status" alt="Quality Gate Status"></a></p>
 
 <a href="#índice" id="índice" style="color: inherit; text-decoration: none;">
   <h2>Índice</h2>
 </a>
 <ul>
 <li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#introducci%C3%B3n">Introducción</a></li>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#clase-funko">Clase Funko</a></li>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#comandos-de-la-aplicaci%C3%B3n">Comandos de la aplicación</a></li>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-grupon/#ejercicio-pe103">Ejercicio PE103</a></li>
 <li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#conclusi%C3%B3n">Conclusión</a></li>
 <li><a href="https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#bibliograf%C3%ADa">Bibliografía</a></li>
 </ul>
@@ -40,14 +43,104 @@
 <a href="#introducción" id="introducción" style="color: inherit; text-decoration: none;">
   <h2>Introducción</h2>
 </a>
+<p>Este proyecto consiste en la implementación de una aplicación que permita el almacenamiento de información de los Funko Pops de varios usuarios. Este sistema se encuentra desarrollado en Typescript, tratando de seguir los principios SOLID del diseño orientado a objetos. La información de los Funkos se hace persistente mediante ficheros JSON que se guardan en carpetas pertenecientes a los distintos usuarios del sistema. El proyecto sigue la siguiente estructura de directorios:</p>
+<ul>
+<li><strong>dist</strong>: Código JavaScript generado</li>
+<li><strong>docs</strong>: Documentación del código</li>
+<li><strong>src</strong>: Código fuente TypeScript<ul>
+<li><strong>classes</strong>: Clases básicas</li>
+<li><strong>enums</strong>: Enumeraciones</li>
+<li><strong>pe-103</strong>: Ejercicio realizado en el aula durante la PE 103</li>
+</ul>
+</li>
+<li><strong>tests</strong>: Tests del código fuente TypeScript</li>
+</ul>
+<p>Durante el desarrollo del sistema, se han utilizado las siguientes herramientas:</p>
+<ul>
+<li><strong>ESLint</strong> para la comprobación de errores</li>
+<li><strong>Prettier</strong> para el formateo del código</li>
+<li><strong>TypeDoc</strong> para la generación automática de documentación del código</li>
+<li><strong>Mocha</strong> y <strong>Chai</strong> para el desarrollo dirigido por pruebas</li>
+<li><strong>C8</strong> para la comprobación del cubrimiento del código fuente</li>
+<li><strong>GitHub Actions</strong> para la integración continua del código ejecutado en <strong>Node.js</strong>, el envío de información de cubrimiento a <strong>Coveralls</strong> y la comprobación de calidad y seguridad del código fuente con <strong>Sonar Cloud</strong></li>
+</ul>
+
+<a href="#clase-funko" id="clase-funko" style="color: inherit; text-decoration: none;">
+  <h2>Clase Funko</h2>
+</a>
+<p>La clase <code>Funko</code> y se utiliza para almacenar los datos de los Funkos que se almacenan en el sistema y cuenta con los siguientes atributos:</p>
+<ul>
+<li>ID del Funko. La clase controla que sea positivo.</li>
+<li>Nombre del Funko.</li>
+<li>Descripción del Funko.</li>
+<li>Tipo de Funko. Se puede ver una definición más detallada en el apartado <em>Enumeración FunkoTypes</em>.</li>
+<li>Género del Funko. Se puede ver una definición más detallada en el apartado <em>Enumeración FunkoGenres</em>.</li>
+<li>Número del Funko. La clase controla que sea positivo.</li>
+<li>Exclusividad del Funko.</li>
+<li>Características especiales del Funko.</li>
+<li>Valor de mercado del Funko. La clase controla que sea un valor positivo.</li>
+</ul>
+<p>También posee un método estático <code>instanceFromParams</code> que devuelve una instancia de la clase con la información que se le pasa como parámetros en orden, utilizado para crear los Funkos a partir de la información que reside en los ficheros JSON.</p>
+
+<a href="#enumeración-funkotypes" id="enumeración-funkotypes" style="color: inherit; text-decoration: none;">
+  <h3>Enumeración FunkoTypes</h3>
+</a>
+<p>La enumeración FunkoTypes define los distintos tipos de los que puede ser un Funko, los cuales son Pop!, Pop! Rides, Vynil Soda y Vynil Gold.</p>
+
+<a href="#enumeración-funkogenres" id="enumeración-funkogenres" style="color: inherit; text-decoration: none;">
+  <h3>Enumeración FunkoGenres</h3>
+</a>
+<p>La enumeración FunkoGenres define los distintos géneros a los que puede pertenecer un Funko, los cuales son Animación, Películas y TV, Videojuegos, Deportes, Música y Anime.</p>
+
+<a href="#comandos-de-la-aplicación" id="comandos-de-la-aplicación" style="color: inherit; text-decoration: none;">
+  <h2>Comandos de la aplicación</h2>
+</a>
+<p>La aplicación hace uso de las siguientes funciones para ejecutar los comandos de la aplicación:</p>
+<ul>
+<li><code>add</code>: Añade un Funko a la colección del usuario. Para esto, comprueba si existe algún fichero con el mismo ID del Funko a guardar y si existe un directorio de usuario. Si alguno no existe, lo crea para almacenar la información del nuevo Funko. Si el fichero del Funko ya existe, muestra un mensaje indicando el error. </li>
+<li><code>update</code>: Actualiza un Funko de la colección del usuario. Para esto, comprueba si existe el fichero con el mismo ID del Funko a actualizar. Si el fichero existe actualiza su contenido. En caso contrario, muestra un mensaje indicando el error.</li>
+<li><code>remove</code>: Borra un Funko de la colección del usuario. Para esto, comprueba si existe el fichero con el mismo ID del Funko a eliminar. Si el fichero existe lo elimina. En caso contrario, muestra un mensaje indicando el error.</li>
+<li><code>read</code>: Muestra la información de un Funko de la colección de un usuario. Para esto, comprueba si existe algún fichero con el mismo ID del Funko a mostrar. Si el fichero existe, muestra la información del Funko. En caso contrario, muestra un mensaje indicando el error.</li>
+<li><code>list</code>: Muestra la información de todos los Funkos de la colección de un usuario. Para esto, comprueba si existe el directorio del usuario y muestra los Funkos de la colección. Si el directorio no existe, muestra un mensaje indicando el error.</li>
+<li><code>readFile</code>: Función utilizada por las opciones de la aplicación. Lee un fichero JSON y convierte su contenido en un objeto Funko.</li>
+<li><code>writeFile</code>: Función utilizada por las opciones de la aplicación. Recibe un objeto Funko y escribe su información en un fichero JSON.</li>
+<li><code>printFunko</code>: Función utilizada por las opciones de la aplicación. Muestra por pantalla la información de un objeto Funko.</li>
+</ul>
+
+<a href="#funcionamiento-de-la-aplicación" id="funcionamiento-de-la-aplicación" style="color: inherit; text-decoration: none;">
+  <h3>Funcionamiento de la aplicación</h3>
+</a>
+<p>Para funcionar, la aplicación hace uso del paquete <code>yargs</code> para recibir los argumentos por línea de comandos y ejecuta el comando que haya solicitado el usuario mediante las funciones anteriormente mencionadas.</p>
+
+<a href="#ejercicio-pe103" id="ejercicio-pe103" style="color: inherit; text-decoration: none;">
+  <h2>Ejercicio PE103</h2>
+</a>
+<p>Este ejercicio consistió en utilizar el patrón <em>Template method</em> para crear un lector de ficheros CSV y un lector ficheros JSON que contienen los datos del problema de la mochila. En esta ocasión, solamente se tratará el lector de ficheros CSV y la clase padre, ya que no se pudo implementar el lector de Ficheros JSON.</p>
+
+<a href="#clase-abstracta-filereader" id="clase-abstracta-filereader" style="color: inherit; text-decoration: none;">
+  <h3>Clase abstracta FileReader</h3>
+</a>
+<p>La clase <code>FileReader</code> es la que contiene el método plantilla y los métodos <em>hook</em>. El método plantilla <code>process</code>, lee un fichero de forma síncrona y pasa su contenido al método abstracto <code>processText</code>.</p>
+
+<a href="#clase-csvreader" id="clase-csvreader" style="color: inherit; text-decoration: none;">
+  <h3>Clase CSVReader</h3>
+</a>
+<p>La clase <code>CSVReader</code> hereda de la clase <code>FileReader</code> e implementa la función <code>processText</code> que procesa el texto, separando las líneas por comas para obtener los pesos y los beneficios de los elementos de la mochila y devolverla formateada en un tipo <code>BackpackData</code>.</p>
 
 <a href="#conclusión" id="conclusión" style="color: inherit; text-decoration: none;">
   <h2>Conclusión</h2>
 </a>
+<p>Con esta práctica hemos comenzado a tratar el uso de ficheros con Typescript de manera síncrona y hemos comenzado a incorporar librerías de ejecución a nuestros programas, como son <code>chalk</code>, <code>yargs</code> y <code>fs</code>. Además, se han tenido que utilizar módulos ESM, teniendo que cambiar en cierta medida la configuración del proyecto y algunas librerías, como es el caso del cambio de <code>nyc</code> a <code>c8</code>. Como anotación final, en un principio la QualityGate de <strong>SonarCloud</strong> no aparece superada debido a la complejidad que reside en eliminar bugs que aparecen de manera casi forzosa al utilizar <code>yargs</code>, la necesidad de alcanzar un 80% de cubrimiento de código total en una aplicación que funciona con ficheros y mediante la consola y la obligación de llegar a una duplicación del 3%.</p>
 
 <a href="#bibliografía" id="bibliografía" style="color: inherit; text-decoration: none;">
   <h2>Bibliografía</h2>
 </a>
+<ul>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/prct09-filesystem-funko-app/">Desarrollo de Sistemas Informáticos - Práctica 9 - Aplicación de registro de Funko Pops</a></li>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/typescript-theory/">Desarrollo de Sistemas Informáticos - Aprendiendo TypeScript</a></li>
+<li><a href="https://ull-esit-inf-dsi-2223.github.io/nodejs-theory/">Desarrollo de Sistemas Informáticos - Node.js</a></li>
+<li><a href="https://nodejs.org/docs/latest-v19.x/api/fs.html">Node.js fs documentation</a></li>
+</ul>
 </div></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
@@ -73,10 +166,8 @@
 <li class="tsd-kind-module"><a href="modules/classes_funko.html">classes/funko</a></li>
 <li class="tsd-kind-module"><a href="modules/enums_funko_genres.html">enums/funko_<wbr/>genres</a></li>
 <li class="tsd-kind-module"><a href="modules/enums_funko_types.html">enums/funko_<wbr/>types</a></li>
-<li class="tsd-kind-module"><a href="modules/interfaces_stringable.html">interfaces/stringable</a></li>
 <li class="tsd-kind-module"><a href="modules/pe_103_csv_reader.html">pe-<wbr/>103/csv_<wbr/>reader</a></li>
-<li class="tsd-kind-module"><a href="modules/pe_103_file_reader.html">pe-<wbr/>103/file_<wbr/>reader</a></li>
-<li class="tsd-kind-module"><a href="modules/pe_103_json_reader.html">pe-<wbr/>103/json_<wbr/>reader</a></li></ul></li></ul></div></details></nav></div></div>
+<li class="tsd-kind-module"><a href="modules/pe_103_file_reader.html">pe-<wbr/>103/file_<wbr/>reader</a></li></ul></li></ul></div></details></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="assets/main.js"></script></body></html>
