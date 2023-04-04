@@ -38,7 +38,7 @@ Durante el desarrollo del sistema, se han utilizado las siguientes herramientas:
 - **C8** para la comprobación del cubrimiento del código fuente
 - **GitHub Actions** para la integración continua del código ejecutado en **Node.js**, el envío de información de cubrimiento a **Coveralls** y la comprobación de calidad y seguridad del código fuente con **Sonar Cloud**
 
-### Clase Funko
+## Clase Funko
 
 La clase `Funko` y se utiliza para almacenar los datos de los Funkos que se almacenan en el sistema y cuenta con los siguientes atributos:
 
@@ -53,6 +53,14 @@ La clase `Funko` y se utiliza para almacenar los datos de los Funkos que se alma
 - Valor de mercado del Funko. La clase controla que sea un valor positivo.
 
 También posee un método estático `instanceFromParams` que devuelve una instancia de la clase con la información que se le pasa como parámetros en orden, utilizado para crear los Funkos a partir de la información que reside en los ficheros JSON.
+
+### Enumeración FunkoTypes
+
+La enumeración FunkoTypes define los distintos tipos de los que puede ser un Funko, los cuales son Pop!, Pop! Rides, Vynil Soda y Vynil Gold.
+
+### Enumeración FunkoGenres
+
+La enumeración FunkoGenres define los distintos géneros a los que puede pertenecer un Funko, los cuales son Animación, Películas y TV, Videojuegos, Deportes, Música y Anime.
 
 ## Conclusión
 
