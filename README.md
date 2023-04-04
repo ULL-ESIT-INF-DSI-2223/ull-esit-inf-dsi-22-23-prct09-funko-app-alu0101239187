@@ -62,6 +62,19 @@ La enumeración FunkoTypes define los distintos tipos de los que puede ser un Fu
 
 La enumeración FunkoGenres define los distintos géneros a los que puede pertenecer un Funko, los cuales son Animación, Películas y TV, Videojuegos, Deportes, Música y Anime.
 
+## Comandos de la aplicación
+
+La aplicación hace uso de las siguientes funciones para ejecutar los comandos de la aplicación:
+
+- `add`: Añade un Funko a la colección del usuario. Para esto, comprueba si existe algún fichero con el mismo ID del Funko a guardar y si existe un directorio de usuario. Si alguno no existe, lo crea para almacenar la información del nuevo Funko. Si el fichero del Funko ya existe, muestra un mensaje indicando el error. 
+- `update`: Actualiza un Funko de la colección del usuario. Para esto, comprueba si existe el fichero con el mismo ID del Funko a actualizar. Si el fichero existe actualiza su contenido. En caso contrario, muestra un mensaje indicando el error.
+- `remove`: Borra un Funko de la colección del usuario. Para esto, comprueba si existe el fichero con el mismo ID del Funko a eliminar. Si el fichero existe lo elimina. En caso contrario, muestra un mensaje indicando el error.
+- `read`: Muestra la información de un Funko de la colección de un usuario. Para esto, comprueba si existe algún fichero con el mismo ID del Funko a mostrar. Si el fichero existe, muestra la información del Funko. En caso contrario, muestra un mensaje indicando el error.
+- `list`: Muestra la información de todos los Funkos de la colección de un usuario. Para esto, comprueba si existe el directorio del usuario y muestra los Funkos de la colección. Si el directorio no existe, muestra un mensaje indicando el error.
+- `readFile`: Función utilizada por las opciones de la aplicación. Lee un fichero JSON y convierte su contenido en un objeto Funko.
+- `writeFile`: Función utilizada por las opciones de la aplicación. Recibe un objeto Funko y escribe su información en un fichero JSON.
+- `printFunko`: Función utilizada por las opciones de la aplicación. Muestra por pantalla la información de un objeto Funko.
+
 ## Conclusión
 
 ## Bibliografía
