@@ -306,41 +306,6 @@ describe("Funko class tests", () => {
     );
   });
 
-  it("Function toString", () => {
-    expect(
-      new Funko(
-        1,
-        "Classic Sonic",
-        "El mejor Funko de Sonic",
-        FunkoTypes.POP,
-        FunkoGenres.VIDEOGAMES,
-        "Sonic The Hedgehog",
-        1,
-        true,
-        "",
-        50.99
-      ).toString()
-    ).to.be.equal(
-      "ID: 1\nNombre: Classic Sonic\nDescripción: El mejor Funko de Sonic\nTipo: Pop!\nGénero: Videojuegos\nFranquicia: Sonic The Hedgehog\nNúmero identificativo: 1\nExclusivo\nCaracterísticas especiales: \nValor de mercado: 50.99€\n"
-    );
-    expect(
-      new Funko(
-        1,
-        "Classic Sonic",
-        "El mejor Funko de Sonic",
-        FunkoTypes.POP,
-        FunkoGenres.VIDEOGAMES,
-        "Sonic The Hedgehog",
-        1,
-        false,
-        "",
-        50.99
-      ).toString()
-    ).to.be.equal(
-      "ID: 1\nNombre: Classic Sonic\nDescripción: El mejor Funko de Sonic\nTipo: Pop!\nGénero: Videojuegos\nFranquicia: Sonic The Hedgehog\nNúmero identificativo: 1\nComún\nCaracterísticas especiales: \nValor de mercado: 50.99€\n"
-    );
-  });
-
   it("Function instanceFromCSVString", () => {
     expect(
       Funko.instanceFromParams([

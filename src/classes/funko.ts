@@ -132,18 +132,6 @@ export class Funko {
   }
 
   /**
-   * Returns a string representation of the Funko
-   * @returns String with the information of the Funko
-   */
-  public toString(): string {
-    if (this._exclusive) {
-      return `ID: ${this._id}\nNombre: ${this._name}\nDescripción: ${this._description}\nTipo: ${this._type}\nGénero: ${this._genre}\nFranquicia: ${this._franchise}\nNúmero identificativo: ${this._number}\nExclusivo\nCaracterísticas especiales: ${this._characteristics}\nValor de mercado: ${this._value}€\n`;
-    } else {
-      return `ID: ${this._id}\nNombre: ${this._name}\nDescripción: ${this._description}\nTipo: ${this._type}\nGénero: ${this._genre}\nFranquicia: ${this._franchise}\nNúmero identificativo: ${this._number}\nComún\nCaracterísticas especiales: ${this._characteristics}\nValor de mercado: ${this._value}€\n`;
-    }
-  }
-
-  /**
    * Creates a Funko from a string array with the parameters of the Funko
    * @param text String array with the Funko's parameters
    * @returns A new Funko with the atributes defined
