@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-8d59dc4de5201274e310e4c54b9627a8934c3b88527886e3b421487c677d23eb.svg)](https://classroom.github.com/a/fmDo8ROl)
 # Práctica 9 - Aplicación de registro de Funko Pops
 
 ## Daniel Jorge Acosta
@@ -18,6 +17,25 @@
 - [Bibliografía](https://ull-esit-inf-dsi-2223.github.io/ull-esit-inf-dsi-22-23-prct09-funko-app-alu0101239187/#bibliografía)
 
 ## Introducción
+
+Este proyecto consiste en la implementación de una aplicación que permita el almacenamiento de información de los Funko Pops de varios usuarios. Este sistema se encuentra desarrollado en Typescript, tratando de seguir los principios SOLID del diseño orientado a objetos. El proyecto sigue la siguiente estructura de directorios:
+
+- **dist**: Código JavaScript generado
+- **docs**: Documentación del código
+- **src**: Código fuente TypeScript
+  - **classes**: Clases básicas
+  - **enums**: Enumeraciones
+  - **pe-103**: Ejercicio realizado en el aula durante la PE 103
+- **tests**: Tests del código fuente TypeScript
+
+Durante el desarrollo del sistema, se han utilizado las siguientes herramientas:
+
+- **ESLint** para la comprobación de errores
+- **Prettier** para el formateo del código
+- **TypeDoc** para la generación automática de documentación del código
+- **Mocha** y **Chai** para el desarrollo dirigido por pruebas
+- **C8** para la comprobación del cubrimiento del código fuente
+- **GitHub Actions** para la integración continua del código ejecutado en **Node.js**, el envío de información de cubrimiento a **Coveralls** y la comprobación de calidad y seguridad del código fuente con **Sonar Cloud**
 
 ## Conclusión
 
