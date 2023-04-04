@@ -95,4 +95,6 @@ La clase `CSVReader` hereda de la clase `FileReader` e implementa la función `p
 
 ## Conclusión
 
+Con esta práctica hemos comenzado a tratar el uso de ficheros con Typescript de manera síncrona y hemos comenzado a incorporar librerías de ejecución a nuestros programas, como son `chalk`, `yargs` y `fs`. Además, se han tenido que utilizar módulos ESM, teniendo que cambiar en cierta medida la configuración del proyecto y algunas librerías, como es el caso del cambio de `nyc` a `c8`. Como anotación final, en un principio la QualityGate de **SonarCloud** no aparece superada debido a la complejidad que reside en eliminar bugs que aparecen de manera casi forzosa al utilizar `yargs`, la necesidad de alcanzar un 80% de cubrimiento de código total en una aplicación que funciona con ficheros y mediante la consola y la obligación de llegar a una duplicación del 3%.
+
 ## Bibliografía
